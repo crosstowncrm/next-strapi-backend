@@ -1,0 +1,80 @@
+{
+  "kind": "collectionType",
+  "collectionName": "my_accounts",
+  "info": {
+    "singularName": "my-account",
+    "pluralName": "my-accounts",
+    "displayName": "MyAccount"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "company_name": {
+      "type": "string"
+    },
+    "is_person": {
+      "type": "boolean",
+      "default": false
+    },
+    "email": {
+      "type": "string"
+    },
+    "email_accountant": {
+      "type": "string"
+    },
+    "phone_prefix": {
+      "type": "string"
+    },
+    "phone": {
+      "type": "string"
+    },
+    "mobile_prefix": {
+      "type": "string"
+    },
+    "mobile": {
+      "type": "string"
+    },
+    "fax_prefix": {
+      "type": "string"
+    },
+    "fax": {
+      "type": "string"
+    },
+    "website": {
+      "type": "string"
+    },
+    "office_address": {
+      "type": "component",
+      "repeatable": false,
+      "component": "components.address"
+    },
+    "billing_address": {
+      "type": "component",
+      "repeatable": false,
+      "component": "components.address"
+    },
+    "VAT_number": {
+      "type": "string"
+    },
+    "TAX_number": {
+      "type": "string"
+    },
+    "bank_name": {
+      "type": "string"
+    },
+    "bank_account": {
+      "type": "string"
+    },
+    "bank_code": {
+      "type": "string"
+    },
+    "bank_IBAN": {
+      "type": "string"
+    },
+    "bank_SWIFT": {
+      "type": "string"
+    }
+  }
+}

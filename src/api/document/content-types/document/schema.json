@@ -1,0 +1,58 @@
+{
+  "kind": "collectionType",
+  "collectionName": "documents",
+  "info": {
+    "singularName": "document",
+    "pluralName": "documents",
+    "displayName": "Document"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "document_name": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "document_type": {
+      "type": "enumeration",
+      "enum": [
+        "INVOICE",
+        "  RECEIPT",
+        "  CONTRACT",
+        "  OFFER",
+        "  ID",
+        "  PASSPORT",
+        "  VISA",
+        "  INSURANCE",
+        "  HEALTH",
+        "  CERTIFICATE",
+        "  OTHER"
+      ]
+    },
+    "visibility": {
+      "type": "enumeration",
+      "enum": [
+        "Public",
+        "Private",
+        "Team"
+      ]
+    },
+    "docFile": {
+      "allowedTypes": [
+        "files"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "contact": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::contact.contact",
+      "inversedBy": "documents"
+    }
+  }
+}

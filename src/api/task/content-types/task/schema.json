@@ -1,0 +1,51 @@
+{
+  "kind": "collectionType",
+  "collectionName": "tasks",
+  "info": {
+    "singularName": "task",
+    "pluralName": "tasks",
+    "displayName": "Task"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "content": {
+      "type": "text"
+    },
+    "dueDateAt": {
+      "type": "date"
+    },
+    "position": {
+      "type": "integer"
+    },
+    "priority": {
+      "type": "enumeration",
+      "enum": [
+        "URGENT",
+        "HIGH",
+        "MEDIUM",
+        "LOW"
+      ]
+    },
+    "title": {
+      "type": "string"
+    },
+    "assigned_user": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "tasks"
+    },
+    "status": {
+      "type": "enumeration",
+      "enum": [
+        "Active",
+        "Overdue",
+        "Complete",
+        "Cancelled"
+      ]
+    }
+  }
+}

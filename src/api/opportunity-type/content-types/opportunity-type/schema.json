@@ -1,0 +1,27 @@
+{
+  "kind": "collectionType",
+  "collectionName": "opportunity_types",
+  "info": {
+    "singularName": "opportunity-type",
+    "pluralName": "opportunity-types",
+    "displayName": "Opportunity Type"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "order": {
+      "type": "integer"
+    },
+    "opportunities": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::opportunity.opportunity",
+      "mappedBy": "opportunity_type"
+    }
+  }
+}

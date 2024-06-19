@@ -1,0 +1,30 @@
+{
+  "kind": "collectionType",
+  "collectionName": "sales_stages",
+  "info": {
+    "singularName": "sales-stage",
+    "pluralName": "sales-stages",
+    "displayName": "Sales Stage"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "probability": {
+      "type": "integer"
+    },
+    "order": {
+      "type": "integer"
+    },
+    "opportunities": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::opportunity.opportunity",
+      "mappedBy": "sales_stage"
+    }
+  }
+}

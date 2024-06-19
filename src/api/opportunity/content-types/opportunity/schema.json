@@ -1,0 +1,87 @@
+{
+  "kind": "collectionType",
+  "collectionName": "opportunities",
+  "info": {
+    "singularName": "opportunity",
+    "pluralName": "opportunities",
+    "displayName": "Opportunity"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "company": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::company.company",
+      "inversedBy": "opportunities"
+    },
+    "connected_contacts": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "opportunities"
+    },
+    "budget": {
+      "type": "integer",
+      "default": 0
+    },
+    "close_date": {
+      "type": "date"
+    },
+    "description": {
+      "type": "text"
+    },
+    "expected_revenue": {
+      "type": "integer"
+    },
+    "name": {
+      "type": "string"
+    },
+    "documents": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::document.document"
+    },
+    "assigned_contact": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "opportunities"
+    },
+    "status": {
+      "type": "enumeration",
+      "enum": [
+        "ACTIVE",
+        "INACTIVE",
+        "PENDING",
+        "CLOSED"
+      ]
+    },
+    "campaign": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::campaign.campaign",
+      "inversedBy": "opportunities"
+    },
+    "sales_stage": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::sales-stage.sales-stage",
+      "inversedBy": "opportunities"
+    },
+    "opportunity_type": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::opportunity-type.opportunity-type",
+      "inversedBy": "opportunities"
+    },
+    "assigned_contacts": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::contact.contact",
+      "inversedBy": "opportunities"
+    }
+  }
+}
